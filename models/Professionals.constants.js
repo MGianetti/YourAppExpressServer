@@ -1,0 +1,15 @@
+const MODEL_NAME = "professional";
+const DEFAULT_DDI = 55;
+const CELL_PHONE_MAX_LENGTH = 45;
+const EMAIL_MAX_LENGTH = 45;
+const CPF_MAX_LENGTH = 45;
+const CNPJ_PHONE_MAX_LENGTH = 45;
+
+module.exports = {
+  MODEL_NAME,
+  DEFAULT_DDI,
+  CELL_PHONE_MAX_LENGTH,
+  EMAIL_MAX_LENGTH,
+  CPF_MAX_LENGTH,
+  CNPJ_PHONE_MAX_LENGTH,
+};
