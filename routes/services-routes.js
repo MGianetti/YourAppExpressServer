@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const Services = require("../models/Services");
+const Service = require("../models/Service");
 
 router.post("/new", async (req, res) => {
   try {
@@ -20,7 +20,11 @@ router.put("/edit", async (req, res) => {
 
 router.get("/all", async (req, res) => {
   try {
-  } catch (error) {}
+    const allServices = await Service.findAll();
+    res.send(allServices);
+  } catch (error) {
+    res.status(500);
+  }
 });
 
 module.exports = router;

@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const Clients = require("../models/Clients");
+const Client = require("../models/Client");
 
 router.post("/new", async (req, res) => {
   try {
@@ -20,7 +20,11 @@ router.put("/edit", async (req, res) => {
 
 router.get("/all", async (req, res) => {
   try {
-  } catch (error) {}
+    const allClients = await Client.findAll();
+    res.send(allClients);
+  } catch (error) {
+    res.status(500);
+  }
 });
 
 module.exports = router;

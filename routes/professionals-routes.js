@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const Professionals = require("../models/Professionals");
+const Professional = require("../models/Professional");
 
 router.post("/new", async (req, res) => {
   try {
@@ -20,7 +20,11 @@ router.put("/edit", async (req, res) => {
 
 router.get("/all", async (req, res) => {
   try {
-  } catch (error) {}
+    const allProfessionals = await Professional.findAll();
+    res.send(allProfessionals);
+  } catch (error) {
+    res.status(500);
+  }
 });
 
 module.exports = router;
