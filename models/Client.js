@@ -6,7 +6,7 @@ const {
   SEX_ENUM,
   DEFAULT_DDI,
   CELL_PHONE_MAX_LENGTH,
-} = require("./Clients.constants");
+} = require("./Client.constants");
 
 class Client extends Model {}
 

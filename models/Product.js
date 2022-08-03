@@ -1,11 +1,11 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../database");
 
-const { MODEL_NAME } = require("./Services.constants");
+const { CATEGORY_ENUM, MODEL_NAME } = require("./Product.constants");
 
-class Service extends Model {}
+class Product extends Model {}
 
-Service.init(
+Product.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -15,8 +15,12 @@ Service.init(
     },
     description: { type: DataTypes.STRING, allowNull: false },
     price: { type: DataTypes.INTEGER(10, 2), allowNull: false },
+    category: {
+      type: DataTypes.ENUM(CATEGORY_ENUM),
+      allowNull: false,
+    },
   },
   { sequelize, modelName: MODEL_NAME, timestamps: true }
 );
 
-module.exports = Service;
+module.exports = Product;

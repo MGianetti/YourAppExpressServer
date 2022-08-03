@@ -8,7 +8,7 @@ const {
   DEFAULT_DDI,
   EMAIL_MAX_LENGTH,
   MODEL_NAME,
-} = require("./Professionals.constants");
+} = require("./Professional.constants");
 
 class Professional extends Model {}
 
