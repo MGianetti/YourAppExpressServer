@@ -7,16 +7,16 @@ app.use(cors());
 app.use(express.json());
 
 const clientsRoutes = require("./routes/clients-routes");
-app.use("/clients", clientsRoutes);
+app.use("/client", clientsRoutes);
 
 const productsRoutes = require("./routes/products-routes");
-app.use("/products", productsRoutes);
+app.use("/product", productsRoutes);
 
 const professionalsRoutes = require("./routes/professionals-routes");
-app.use("/professionals", professionalsRoutes);
+app.use("/professional", professionalsRoutes);
 
 const servicesRoutes = require("./routes/services-routes");
-app.use("/services", servicesRoutes);
+app.use("/service", servicesRoutes);
 
 sequelize.sync({ force: true }).then(() => {
   console.log("Db is ready");
