@@ -35,7 +35,7 @@ Client.init(
     },
     age: { type: DataTypes.INTEGER, allowNull: true },
   },
-  { sequelize, modelName: MODEL_NAME, timestamps: true }
+  { sequelize, modelName: MODEL_NAME, timestamps: true, paranoid: true }
 );
 
 module.exports = Client;

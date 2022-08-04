@@ -20,7 +20,7 @@ Product.init(
       allowNull: false,
     },
   },
-  { sequelize, modelName: MODEL_NAME, timestamps: true }
+  { sequelize, modelName: MODEL_NAME, timestamps: true, paranoid: true }
 );
 
 module.exports = Product;

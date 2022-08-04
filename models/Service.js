@@ -14,9 +14,9 @@ Service.init(
       unique: true,
     },
     description: { type: DataTypes.STRING, allowNull: false },
-    price: { type: DataTypes.INTEGER(10, 2), allowNull: false },
+    price: { type: DataTypes.INTEGER, allowNull: false },
   },
-  { sequelize, modelName: MODEL_NAME, timestamps: true }
+  { sequelize, modelName: MODEL_NAME, timestamps: true, paranoid: true }
 );
 
 module.exports = Service;

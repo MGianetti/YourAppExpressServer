@@ -35,7 +35,7 @@ Professional.init(
     cpf: { type: DataTypes.STRING(CPF_MAX_LENGTH), allowNull: false },
     cnpj: { type: DataTypes.STRING(CNPJ_PHONE_MAX_LENGTH), allowNull: false },
   },
-  { sequelize, modelName: MODEL_NAME, timestamps: true }
+  { sequelize, modelName: MODEL_NAME, timestamps: true, paranoid: true }
 );
 
 module.exports = Professional;
