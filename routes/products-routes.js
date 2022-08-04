@@ -1,19 +1,36 @@
 const express = require("express");
 const router = express.Router();
+const httpStatus = require("http-status");
 
 const Product = require("../models/Product");
 
 router.post("/new", async (req, res) => {
   try {
-  } catch (error) {}
+    const newProduct = await Product.create(req.body);
+
+    res.send(newProduct);
+  } catch (error) {
+    res.status(500);
+  }
 });
 
-router.post("/delete", async (req, res) => {
+router.delete("/delete/:id", async (req, res) => {
+  const { id } = req.params;
+  const deletedProductId = await Product.destroy({ where: { id } });
+
+  res.status(httpStatus.OK).json(deletedProductId);
   try {
   } catch (error) {}
 });
 
-router.put("/edit", async (req, res) => {
+router.put("/edit/:id", async (req, res) => {
+  const { id } = req.params;
+  const editedProductId = await Product.update(
+    { ...req.body },
+    { where: { id } }
+  );
+
+  res.status(httpStatus.OK).json(editedProductId);
   try {
   } catch (error) {}
 });
